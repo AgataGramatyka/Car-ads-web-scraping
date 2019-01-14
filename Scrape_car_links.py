@@ -20,7 +20,6 @@ row = cur.fetchone()
 if row is not None:
     print("Restarting existing crawl.")
 
-
 start_time = time()
 pagecount = 1
 many = 0
