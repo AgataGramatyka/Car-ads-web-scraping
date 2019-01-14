@@ -26,7 +26,7 @@ pagecount = 1
 many = 0
 while many < 2 :
     url = 'hiddenurl' + str(pagecount) + '.html'
-    many = many + 1
+    many += 1
     pagecount = pagecount + 1
     response = get(url)
     soup = BeautifulSoup(response.text, 'html.parser')

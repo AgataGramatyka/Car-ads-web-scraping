@@ -9,10 +9,11 @@ conn = sqlite3.connect('cars.sqlite')
 cur = conn.cursor()
 
 start_time = time()
-many = 0
+many = 0 #counter
+crawl_attempts = 50 #maximum number of ads accessed in one round of scraping
 
-while many < 6 :
-    many = many + 1
+while many < crawl_attempts :
+    many += 1
     cur.execute('SELECT url FROM Ads WHERE Retrieved IS NULL LIMIT 1')
     try:
         URL = cur.fetchone()[0]
